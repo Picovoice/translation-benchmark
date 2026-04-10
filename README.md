@@ -94,8 +94,14 @@ python3 benchmark.py \
 ## Results
 
 This benchmark was run on cpu with *4* threads for the language pairs: de-en, en-fr, fr-es, es-it, and it-de. Zebra is
-**2.4** times faster than the original model and uses **18±3%** of the RAM while maintaining **99.3±1%** of the accuracy of the
+**2.4** times faster than the original model and uses **17.7%** of the RAM while maintaining **99.3%** of the accuracy of the
 original model.
+
+| Metric | Result |
+|:-:|:-:|
+| Accuracy | 99.3% |
+| Performance | 2.4x |
+| RAM Usage | 17.7% |
 
 ![](./results/plots/bleu.png)
 ![](./results/plots/words_per_second.png)

@@ -169,23 +169,27 @@ def compare(
             speedups.append(zebra_words_per_second / helsinki_words_per_second)
 
     ram_usages = []
+    ram_usages_inv = []
     for pair, dataset in datasets.items():
         for benchmark in dataset.benchmarks():
             zebra = data[Translators.ZEBRA][pair][benchmark]["peak_memory"]
             helsinki = data[Translators.HELSINKI][pair][benchmark]["peak_memory"]
-            ram_usages.append(zebra / helsinki * 100)
+            ram_usages.append(zebra / helsinki)
+            ram_usages_inv.append(helsinki / zebra)
 
     accuracy_mean = np.mean(accuracies)
     accuracy_std = np.std(accuracies)
-    print(f"Accuracy = {accuracy_mean:.1f}±{accuracy_std:.0f}%")
+    print(f"Accuracy = {accuracy_mean:.1f}±{accuracy_std:.1f}% ({100 - accuracy_mean:.1f}±{accuracy_std:.1f}%)")
 
     speedup_mean = np.mean(speedups)
     speedup_std = np.std(speedups)
-    print(f"Speedup = {speedup_mean:.1f}±{speedup_std:.0f}x")
+    print(f"Performance = {speedup_mean:.1f}±{speedup_std:.1f}x")
 
     ram_usage_mean = np.mean(ram_usages)
     ram_usage_std = np.std(ram_usages)
-    print(f"RAM = {ram_usage_mean:.0f}±{ram_usage_std:.0f}%")
+    ram_usage_inv_mean = np.mean(ram_usages_inv)
+    ram_usage_inv_std = np.std(ram_usages_inv)
+    print(f"RAM Usage = {100 * ram_usage_mean:.1f}±{100 * ram_usage_std:.1f}% ({ram_usage_inv_mean:.1f}±{ram_usage_inv_std:.1f}x)")
 
 
 def main() -> None:

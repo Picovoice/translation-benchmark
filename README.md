@@ -29,7 +29,7 @@ We compare the accuracy and speed for the following Translation engines:
 
 ### Accuracy
 
-The accuracy of the model is measured using `BLEU` and `chr-F`.
+The accuracy of the model is measured using `BLEU`.
 
 ### Performance
 
@@ -94,8 +94,8 @@ python3 benchmark.py \
 ## Results
 
 This benchmark was run on cpu with *4* threads for the language pairs: de-en, en-fr, fr-es, es-it, and it-de. Zebra is
-**2.4** times faster than the original model and uses **17.7%** of the RAM while maintaining **99.3%** of the accuracy of the
-original model.
+**2.4** times faster than Helsinki-NLP/opus-mt and uses **17.7%** of the RAM while maintaining **99.3%** of the accuracy
+of Helsinki-NLP/opus-mt.
 
 | Metric | Result |
 |:-:|:-:|

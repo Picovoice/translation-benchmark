@@ -19,7 +19,7 @@ DEFAULT_PLOTS_FOLDER = os.path.join(os.path.dirname(__file__), "results", "plots
 
 ENGINE_PRINT_NAMES = {
     Translators.ZEBRA: "Picovoice Zebra",
-    Translators.HELSINKI: "Helsinki-NLP",
+    Translators.HELSINKI: "Helsinki-NLP/opus-mt",
 }
 
 
@@ -56,7 +56,9 @@ def plot_bleu(
 
     handles, labels = plt.gca().get_legend_handles_labels()
     by_label = dict(zip(labels, handles))
-    plt.legend(by_label.values(), by_label.keys())
+    plt.legend(
+        by_label.values(),
+        [ENGINE_PRINT_NAMES[Translators(x)] for x in by_label.keys()])
 
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     plt.savefig(output_path)
@@ -96,7 +98,9 @@ def plot_perf(
 
     handles, labels = plt.gca().get_legend_handles_labels()
     by_label = dict(zip(labels, handles))
-    plt.legend(by_label.values(), by_label.keys())
+    plt.legend(
+        by_label.values(),
+        [ENGINE_PRINT_NAMES[Translators(x)] for x in by_label.keys()])
 
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     plt.savefig(output_path)
@@ -136,7 +140,9 @@ def plot_mem(
 
     handles, labels = plt.gca().get_legend_handles_labels()
     by_label = dict(zip(labels, handles))
-    plt.legend(by_label.values(), by_label.keys())
+    plt.legend(
+        by_label.values(),
+        [ENGINE_PRINT_NAMES[Translators(x)] for x in by_label.keys()])
 
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     plt.savefig(output_path)

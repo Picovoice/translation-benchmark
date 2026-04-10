@@ -93,32 +93,10 @@ python3 benchmark.py \
 
 ## Results
 
-### German to English
+This benchmark was run on cpu with *4* threads for the language pairs: de-en, en-fr, fr-es, es-it, and it-de. Zebra is
+**2.4** times faster than the original model and uses **18±3%** of the RAM while maintaining **99.3±1%** of the accuracy of the
+original model.
 
-| ![](./results/plots/de-en/bleu.png) | ![](./results/plots/de-en/chrf.png) |
-|:-:|:-:|
-| ![](./results/plots/de-en/words_per_second.png) | ![](./results/plots/de-en/peak_memory_usage.png) |
-
-### English to French
-
-| ![](./results/plots/en-fr/bleu.png) | ![](./results/plots/en-fr/chrf.png) |
-|:-:|:-:|
-| ![](./results/plots/en-fr/words_per_second.png) | ![](./results/plots/en-fr/peak_memory_usage.png) |
-
-### French to Spanish
-
-| ![](./results/plots/fr-es/bleu.png) | ![](./results/plots/fr-es/chrf.png) |
-|:-:|:-:|
-| ![](./results/plots/fr-es/words_per_second.png) | ![](./results/plots/fr-es/peak_memory_usage.png) |
-
-### Spanish to Italian
-
-| ![](./results/plots/es-it/bleu.png) | ![](./results/plots/es-it/chrf.png) |
-|:-:|:-:|
-| ![](./results/plots/es-it/words_per_second.png) | ![](./results/plots/es-it/peak_memory_usage.png) |
-
-### Italian to German
-
-| ![](./results/plots/it-de/bleu.png) | ![](./results/plots/it-de/chrf.png) |
-|:-:|:-:|
-| ![](./results/plots/it-de/words_per_second.png) | ![](./results/plots/it-de/peak_memory_usage.png) |
+![](./results/plots/bleu.png)
+![](./results/plots/words_per_second.png)
+![](./results/plots/peak_memory_usage.png)

@@ -1,0 +1,9 @@
+{
+    "input_sentences": 3000,
+    "input_words": 61674,
+    "output_words": 60284,
+    "translate_duration": 1476.6485770326108,
+    "bleu": 33.3192100346579,
+    "chrf": 0.5853149905833481,
+    "peak_memory": 561311744
+}
